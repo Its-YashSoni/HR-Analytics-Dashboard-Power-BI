@@ -170,7 +170,7 @@ SL % = DIVIDE([SL Count], [Total working days], 0)
 # 🔍 8. Key Insights Generated
 
 <p align="center">
-  <img src="images/insights_summary.png" width="900" alt="Insights Summary Visualization"/>
+  <img src="images/insights_summary.png" width="300" alt="Insights Summary Visualization"/>
 </p>
 
 ### 📌 Insight 1 — WFH peaks on Monday & Friday
