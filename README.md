@@ -118,25 +118,31 @@ Contains sheets: **April 2022**, **May 2022**, **June 2022**
 ### Total Working Days
 
 ```DAX
-Total working days = COUNTROWS('Final Data')
+Total working days = 
+
+var totaldays = COUNT('Final Data'[Value])
+var notWorkingDays = CALCULATE(COUNT('Final Data'[Value]) , 'Final Data'[Value] in {"WO", "HO"})
+
+RETURN
+totaldays-notWorkingDays
 ```
 
 ### **Presence %**
 
 ```DAX
-Presence % = DIVIDE([Present Days], [Total working days], 0)
+Presence % = DIVIDE([Present Days], 'Measure Table'[Total working days], 0)
 ```
 
 ### **WFH %**
 
 ```DAX
-WFH % = DIVIDE([WFH Count], [Total working days], 0)
+WFH % = DIVIDE([WFH Count], [Present Days], 0)
 ```
 
 ### **SL %**
 
 ```DAX
-SL % = DIVIDE([SL Count], [Total working days], 0)
+SL % = DIVIDE([SL Count], [Total working days], 0 )
 ```
 
 ---
